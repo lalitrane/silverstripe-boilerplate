@@ -1,0 +1,19 @@
+---
+Name: galactic
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: themes
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Galactic\SiteConfigExtension
+SilverStripe\Core\Injector\Injector:
+  TheWebmen\WebpImages\Assets\WebpGenerator:
+    properties:
+      enabled: true
+      quality: 90
+SilverStripe\Assets\File:
+  extensions:
+    - Galactic\UploadFileExtension
+SilverStripe\AssetAdmin\Forms\FileFormFactory:
+  extensions:
+    - Galactic\UploadFileFactoryExtension

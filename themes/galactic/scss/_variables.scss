@@ -1,0 +1,150 @@
+:root{
+    --bs-primary: #55656D;
+    --bs-secondary: #C3E329;
+    --bs-tertiary: #F31F54;
+    --bs-btn: #F31F54;
+    --bs-primary-rgb:0, 98, 34;
+    --bs-secondary-rgb:55, 173, 71;
+    --bs-warning-rgb:238,228,37;
+    --bs-danger-rgb:163, 19, 0;
+    --bs-body-font-size: 1rem;
+    --bs-yellow:#EDE425;
+    --bs-text-primary:#343A40;
+    --bs-text-secondary:#635B6D;
+}
+
+$btn-close-color:#ff0000;
+
+$btn-close-bg:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff0000'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+$link-transition: all 0.2s ease-in-out !default;
+$dropdown-transition: all 0.25s ease-in-out !default;
+$primary: #006222;
+$secondary: #C3E329;
+$yellow:#EDE425;
+$warning:rgb(var(--bs-warning-rgb));
+$fw-medium:500;
+$fw-light:300;
+$fw-bold:600;
+$navfs:1rem;
+$font-size-base:1rem; // Assumes the browser default, typically `16px`
+$white:#ffffff;
+
+
+@import url("https://use.typekit.net/gob2xye.css");
+
+.dark{
+   
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+
+.text-tertiary{
+    color: var(--bs-tertiary);
+}
+.text-purple{
+    color: var(--bs-primary);
+}
+.dark{
+   
+    background-color: var(--bs-primary);
+    color: #fff;
+}
+.btn-primary{
+    --bs-btn-bg:var(--bs-btn);
+    --bs-btn-border-color:var(--bs-btn);
+    --bs-btn-hover-bg:var(--bs-secondary);
+    --bs-btn-hover-border-color: var(--bs-secondary);
+}
+
+.btn-secondary{
+    --bs-btn-bg:var(--bs-secondary);
+    --bs-btn-border-color:var(--bs-secondary);
+    --bs-btn-hover-bg:var(--bs-btn);
+    --bs-btn-hover-border-color: var(--bs-btn);
+}
+body{
+    overflow-x: hidden;
+}
+.btn-close{
+    width: 0.3rem;
+    height: 0.3rem;
+    background: $btn-close-bg;
+}
+
+.btn-outline-danger{
+    color:rgb(var( --bs-danger-rgb));
+    border-color:rgb(var( --bs-danger-rgb));
+}
+p{
+    font-size: $font-size-base;
+    font-weight: 300;
+}
+h2{
+    font-size: $font-size-base  * 2;
+}
+h3{
+    font-size: $font-size-base  * 1.5;
+}
+
+ul li {
+    font-weight: 100;
+    list-style-type: disc;
+}
+
+a{
+    cursor: pointer;
+    font-weight: 300;
+    color:#A31300;
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap');
+
+*{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: $fw-medium;
+}
+.rounded{
+    border-radius: 10px !important;
+}
+
+.shadow{
+    box-shadow: 0px 2px 5px 3px #00000036;
+}
+
+.tftoutline-btn{
+    border: 2px solid rgb(var( --bs-danger-rgb));
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    z-index: 4;
+
+    &:hover{
+        border: 2px solid var( --bs-secondary);
+        background-color:var( --bs-secondary) ;
+        color:#ffffff;
+    }
+}
+
+.pt-6{
+    padding-top: 4.5rem !important;
+}
+.fs-1{
+    @include media-breakpoint-down(sm){
+        font-size: 46px;
+    }
+}
+
+.container{
+
+    @include media-breakpoint-down(sm){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
+
+.topborderradius{
+    border-radius: 10px 10px 0 0;
+}
+.bottomborderradius{
+    border-radius:  0 0 10px 10px;
+}

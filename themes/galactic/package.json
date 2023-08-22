@@ -1,0 +1,28 @@
+{
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.49.11"
+  },
+  "name": "Origami",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compilecss": "sass --watch scss/main.scss:css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "aos": "^2.3.4",
+    "bootstrap": "^5.2.0",
+    "bootstrap-icons": "^1.10.2",
+    "jquery": "^3.6.0",
+    "tiny-slider": "^2.9.4"
+  }
+}

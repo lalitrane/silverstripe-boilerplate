@@ -1,0 +1,38 @@
+.post-image{
+    img{
+        width: 100%;
+ height: 100%;
+    }
+ 
+}
+
+
+.post-image,.post-summary{
+    .actual-post{
+        background-size: cover;
+        height: 270px;
+        display: block;
+        width: 100%;
+        background-position: center;
+    }
+}
+.post-summary{
+    .postmeta{
+        font-size: 13px;
+    }
+    h5{
+        a{
+            font-weight: 600;
+        }
+    }
+    .p-2 {
+        padding: 0.7rem!important;
+    }
+}
+
+.blurbmeta{
+    a{
+        font-size: 14px;
+        font-weight: 300;
+    }
+}

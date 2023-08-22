@@ -1,0 +1,49 @@
+//----------------------------------------------------------//
+//	NAV
+//----------------------------------------------------------//
+
+  .sidebar .nav-link {
+    letter-spacing: normal;
+  }
+  .navbar-other .nav-link {
+    cursor: pointer;
+  }
+//   @media (min-width: 992px) and (max-width: 1199.98px) {
+//     .navbar .navbar-collapse .nav-link {
+//       padding-right: 0.6rem;
+//       padding-left: 0.6rem;
+//     }
+//   }
+
+  //----------------------------------------------------------//
+  //	TABS
+  //----------------------------------------------------------//
+  .nav-tabs .nav-link {
+
+    transition: $link-transition;
+    @include font-size(0.85rem);
+    padding: 0.6rem 1.3rem;
+    i {
+      @include font-size(1rem);
+    }
+  }
+
+
+
+
+
+  @media (min-width: 992px) {
+    .nav-tabs.nav-justified .nav-item {
+      margin-left: 0.75rem;
+      margin-right: 0.75rem;
+      &:first-child {
+        margin-left: 0;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .tab-content {
+    margin-top: 1.25rem;
+  }

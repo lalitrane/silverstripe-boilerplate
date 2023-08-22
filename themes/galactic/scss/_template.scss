@@ -1,0 +1,53 @@
+.socialprofiles, .copyrightnav{
+    padding-left:0;
+    li{
+        list-style-type:none ;
+        display: inline-block;
+    }
+}
+.socialprofile{
+    li{
+margin-right: 6px;
+    }
+}
+
+.footernav{
+    li{
+        list-style-type:none ;
+        margin-bottom: 8px;
+    }
+}
+
+.copyright{
+    font-size: 14px;
+}
+
+.navbar-expand-lg {
+    .navbar-collapse.bg-light{
+       .nav-link {
+         @include media-breakpoint-down(lg){
+           color: var(--bs-text-primary) !important ;
+         }
+   
+        }
+        }
+      }
+
+      .navbar-expand-lg {
+        .navbar-collapse.bg-dark{
+           .nav-link {
+             @include media-breakpoint-down(lg){
+                color: rgba(255,255,255,.55)!important;
+             }
+       
+            }
+            }
+          }
+
+
+          .teampicture{
+            background-size: cover;
+            height: 300px;
+            width: 100%;
+            background-position: center;
+          }
