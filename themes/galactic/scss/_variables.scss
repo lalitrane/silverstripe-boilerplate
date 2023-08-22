@@ -30,8 +30,7 @@ $font-size-base:1rem; // Assumes the browser default, typically `16px`
 $white:#ffffff;
 
 
-@import url("https://use.typekit.net/gob2xye.css");
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
 .dark{
    
     background-color: var(--bs-primary);
