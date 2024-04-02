@@ -7,7 +7,7 @@ SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Galactic\SiteConfigExtension
 SilverStripe\Core\Injector\Injector:
-  TheWebmen\WebpImages\Assets\WebpGenerator:
+  WeDevelop\WebpImages\WebpGenerator:
     properties:
       enabled: true
       quality: 90

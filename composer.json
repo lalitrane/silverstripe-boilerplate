@@ -11,8 +11,8 @@
         "silverstripe/spamprotection": "^4.0",
         "undefinedoffset/silverstripe-nocaptcha": "^2.4",
         "silverstripe/blog": "^4.0",
-        "webmen/silverstripe-webp-images": "^2.0",
-        "silverstripe/userforms": "^6.0"
+        "silverstripe/userforms": "^6.0",
+        "wedevelopnl/silverstripe-webp-images": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
