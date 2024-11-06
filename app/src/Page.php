@@ -27,7 +27,6 @@ namespace {
     private static $has_one = [
       'HeroImage' => Image::class,
       'MetaImage' => Image::class
-
     ];
 
     // This will auto publish the image
@@ -37,17 +36,17 @@ namespace {
     ];
 
 
-    public function onAfterWrite()
-    {
-      parent::onAfterWrite();
-      if ($this->HeroImage()->exists() && !$this->HeroImage()->isPublished()) {
-        $this->HeroImage()->doPublish();
-      }
+    // public function onAfterWrite()
+    // {
+    //   parent::onAfterWrite();
+    //   if ($this->HeroImage()->exists() && !$this->HeroImage()->isPublished()) {
+    //     $this->HeroImage()->doPublish();
+    //   }
 
-      if ($this->MetaImage()->exists() && !$this->MetaImage()->isPublished()) {
-        $this->MetaImage()->doPublish();
-      }
-    }
+    //   if ($this->MetaImage()->exists() && !$this->MetaImage()->isPublished()) {
+    //     $this->MetaImage()->doPublish();
+    //   }
+    // }
     function getSettingsFields()
     {
       $fields = parent::getSettingsFields();
@@ -91,7 +90,7 @@ namespace {
 
       $fields->addFieldToTab(
         'Root.Main',
-        $photo = UploadField::create('HeroImage', 'Banner'),
+        $photo1 = UploadField::create('HeroImage', 'Banner'),
         'Content'
       );
 
@@ -106,10 +105,11 @@ namespace {
       );
       $fields->addFieldToTab(
         'Root.Main',
-        $photo = UploadField::create('MetaImage', 'Meta Image'),
+        $photo2 = UploadField::create('MetaImage', 'Meta Image'),
         'MetaDescription'
       );
-      $photo->setFolderName('Hero-photos');
+      $photo1->setFolderName('Hero-photos');
+      $photo2->setFolderName('Meta-photos');
       return $fields;
     }
   }

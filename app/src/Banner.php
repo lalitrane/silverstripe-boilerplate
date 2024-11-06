@@ -32,7 +32,8 @@ class Banner extends DataObject
     private static $has_one = [
 
         'PrimaryPhoto' => Image::class,
-        'MobilePhoto' => Image::class
+        'MobilePhoto' => Image::class,
+        'HomePage' => HomePage::class, // Add this line
     ];
 
     private static $api_access = true;

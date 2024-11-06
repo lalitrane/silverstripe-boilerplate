@@ -1,22 +1,32 @@
 <?php
 namespace Galactic;
+
 use Page;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\Forms\GridField\GridFieldConfig_RecordEditor;
+use Galactic\Banner;
+class HomePage extends Page
+{
+    private static $description = 'Homepage layout';
+    private static $icon_class = 'font-icon-home';
+    private static $table_name = 'OGHomepage';
 
-use SilverStripe\Forms\TextareaField;
-use SilverStripe\Forms\TextField;
-use SilverStripe\Assets\Image;
-use SilverStripe\AssetAdmin\Forms\UploadField;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+    private static $has_many = [
+        'Banners' => Banner::class,
+    ];
 
-    class HomePage extends Page
+    public function getCMSFields()
     {
-     
-        private static $description = 'Homepage layout';
-        private static $icon_class = 'font-icon-home';
-        private static $table_name = 'OGHomepage';
-  
+        $fields = parent::getCMSFields();
 
-      
+        $bannerConfig = GridFieldConfig_RecordEditor::create();
+        $bannerGrid = GridField::create('Banners', 'Homepage Banners', $this->Banners(), $bannerConfig);
 
+        $fields->addFieldToTab('Root.Banners', $bannerGrid);
+        $fields->removeByName(array(
+            'HeroImage'
+        ));
+        return $fields;
     }
+}

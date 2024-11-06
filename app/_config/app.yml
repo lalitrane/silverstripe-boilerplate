@@ -6,11 +6,6 @@ SilverStripe\Core\Manifest\ModuleManifest:
 SilverStripe\SiteConfig\SiteConfig:
   extensions:
     - Galactic\SiteConfigExtension
-SilverStripe\Core\Injector\Injector:
-  WeDevelop\WebpImages\WebpGenerator:
-    properties:
-      enabled: true
-      quality: 90
 SilverStripe\Assets\File:
   extensions:
     - Galactic\UploadFileExtension

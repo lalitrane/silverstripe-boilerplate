@@ -24,3 +24,7 @@ SilverStripe\Core\Injector\Injector:
       ProxyServer: '`SS_OUTBOUND_PROXY`'
       ProxyPort: '`SS_OUTBOUND_PROXY_PORT`'
       ProxyAuth: '`SS_OUTBOUND_PROXY_AUTH`'
+
+SilverStripe\View\Requirements_Backend:
+  add_themed_css_expose_dirs:
+    - app/css
