@@ -189,3 +189,4 @@ function offCanvas() {
 }
 
 
+console.log('main-dev.js loaded');
