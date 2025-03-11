@@ -171,9 +171,22 @@ function offCanvas() {
     },
     onStick: function onStick() {
       var navbarClonedClass = this.clonedElem.classList;
-      if (navbarClonedClass.contains('transparent') && navbarClonedClass.contains('navbar-dark')) {
-        this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
+
+      if (navbarClonedClass.contains('navbar-dark')) {
+        // this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
+    this.clonedElem.className = this.clonedElem.className.addClass("navbar-dark");
+
       }
+      // if (navbarClonedClass.contains('transparent') && navbarClonedClass.contains('navbar-dark')) {
+      //   this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
+      //   // this.clonedElem.className = this.clonedElem.className.addClass("navbar-dark");
+
+      // }
+      // if (navbarClonedClass.contains('transparent') && navbarClonedClass.contains('navbar-light')) {
+      //   // this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
+      //   this.clonedElem.className = this.clonedElem.className.addClass("navbar-light");
+
+      // }
     }
   };
   var banner = new Headhesive('.navbar', options);

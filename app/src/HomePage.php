@@ -23,7 +23,7 @@ class HomePage extends Page
         $bannerConfig = GridFieldConfig_RecordEditor::create();
         $bannerGrid = GridField::create('Banners', 'Homepage Banners', $this->Banners(), $bannerConfig);
 
-        $fields->addFieldToTab('Root.Banners', $bannerGrid);
+        $fields->addFieldToTab('Root.Slider', $bannerGrid);
         $fields->removeByName(array(
             'HeroImage'
         ));

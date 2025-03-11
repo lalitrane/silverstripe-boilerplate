@@ -12,7 +12,9 @@
         "undefinedoffset/silverstripe-nocaptcha": "^2.4",
         "silverstripe/blog": "^4.3.1",
         "silverstripe/userforms": "^6.3.1",
-        "silverstripe/totp-authenticator": "^5.3"
+        "silverstripe/totp-authenticator": "^5.3",
+        "dnadesign/silverstripe-elemental": "^5.3",
+        "dnadesign/silverstripe-elemental-list": "^2.0@beta"
     },
     "require-dev": {
         "phpunit/phpunit": "^9.5"
@@ -33,8 +35,8 @@
         ],
         "expose": [
             "themes/galactic/css",
-            "themes/origami/javascript",
-            "themes/origami/images",
+            "themes/galactic/javascript",
+            "themes/galactic/images",
               "app/css"
      
         ]

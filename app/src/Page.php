@@ -10,6 +10,7 @@ namespace {
   use SilverStripe\AssetAdmin\Forms\UploadField;
   use SilverStripe\Forms\CheckboxField;
   use SilverStripe\Forms\LabelField;
+  use DNADesign\Elemental\Extensions\ElementalPageExtension;
 
   class Page extends SiteTree
   {
@@ -23,7 +24,9 @@ namespace {
       "FooterCol2" => "Boolean",
       "FooterCopyrightCTA" => "Boolean",
     ];
-
+    private static array $extensions = [
+      ElementalPageExtension::class,
+  ];
     private static $has_one = [
       'HeroImage' => Image::class,
       'MetaImage' => Image::class

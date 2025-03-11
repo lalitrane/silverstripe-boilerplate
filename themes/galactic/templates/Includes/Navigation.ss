@@ -1,25 +1,51 @@
-<nav class="navbar navbar-expand-lg classic transparent navbar-light">
+<nav class="navbar navbar-expand-lg classic transparent <% with SiteConfig %><% if $ThemeVariation == 'light' %> navbar-light <% else %> navbar-dark <% end_if %><% end_with %>">
     <div class="container flex-lg-row flex-nowrap align-items-center">
         <div class="navbar-brand w-100">
             <a href="$BaseHref">
+
+                <% if $SiteConfig.ThemeVariation == 'dark'%>
+                <% if $SiteConfig.Logo_Light %>
+                <img class="py-2" src="$SiteConfig.Logo_Light.URL" />
+                <% else %>
+                $SiteConfig.Title
+                <% end_if %>
+
+                <% else %>
                 <% if $SiteConfig.Logo_Dark %>
                 <img class="py-2" src="$SiteConfig.Logo_Dark.URL" />
                 <% else %>
                 $SiteConfig.Title
                 <% end_if %>
+
+                <% end_if %>
+
+
+
+
+
+           
             </a>
         </div>
         <div class="navbar-collapse bg-light offcanvas offcanvas-nav offcanvas-start">
             <div class="offcanvas-header d-lg-none">
                 <a href="$BaseHref" class="brand site-logo d-block py-4" rel="home">
 
-                    <% if $SiteConfig.Logo_Dark %>
-                    <img class="py-2" src="$SiteConfig.Logo_Dark.URL" />
-
+                    <% if $SiteConfig.ThemeVariation == 'dark'%>
+                    <% if $SiteConfig.Logo_Light %>
+                    <img class="py-2" src="$SiteConfig.Logo_Light.URL" />
                     <% else %>
                     $SiteConfig.Title
                     <% end_if %>
-
+    
+                    <% else %>
+                    <% if $SiteConfig.Logo_Dark %>
+                    <img class="py-2" src="$SiteConfig.Logo_Dark.URL" />
+                    <% else %>
+                    $SiteConfig.Title
+                    <% end_if %>
+    
+                    <% end_if %>
+    
                 </a>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
@@ -39,7 +65,8 @@
                                 class="nav-item dropdown <% if $isCurrent %>current<% else_if $isSection %>section<% end_if %>">
                                 <a href="$Link"
                                     class="nav-link <% if $Children %>dropdown-toggle <% end_if %>">$MenuTitle
-                                    <% if $Children %><i class="bi bi-chevron-right"></i> <% end_if %></a></li>
+                                    <% if $Children %><i class="bi bi-chevron-right"></i> <% end_if %></a>
+                            </li>
                             <% end_loop %>
 
                         </ul>
@@ -53,9 +80,17 @@
 
                 <!-- /.navbar-nav -->
                 <div class="offcanvas-footer d-lg-none">
+
                     <div>
-                        <a href="mailto:first.last@email.com" class="link-inverse">info@email.com</a>
-                        <br /> 00 (123) 456 78 90 <br />
+                        <% with $SiteConfig %>
+                        <% if $Email %>
+                        <a href="mailto:$Email class="link-inverse">$Email</a>
+                        <% end_if %>
+
+                        <% if $PhoneNumber %>
+                        $PhoneNumber <br />
+                        <% end_if %>
+                        <% end_with %>
                         <nav class="nav social social-white mt-4">
                             <a href="#"><i class="uil uil-twitter"></i></a>
 

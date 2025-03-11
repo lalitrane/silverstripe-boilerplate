@@ -365,3 +365,32 @@
 .share-dropdown .dropdown-toggle:after {
   display: none;
 }
+
+.navbar-dark{
+  background-color: var(--bs-dark);
+  .offcanvas-nav{
+    background-color: var(--bs-dark) !important;
+  }
+.nav-link{
+    color: var(--bs-light) !important;
+  }
+}
+
+
+.navbar-light{
+
+.nav-link{
+    color: var(--bs-dark) !important;
+  }
+}
+
+
+.navbar-stick:not(.navbar-dark) {
+  background: rgba(255, 255, 255, .97);
+  box-shadow: 1px 1px 20px 5px #00000016;
+}
+
+.navbar-stick:not(.navbar-light) {
+ 
+  box-shadow: 1px 1px 20px 5px #ffffff17;
+}

@@ -12,6 +12,7 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use Silverstripe\SiteConfig\SiteConfig;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Forms\DropdownField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\CMS\Model\SiteTree;
 class SiteConfigExtension extends DataExtension
@@ -36,6 +37,7 @@ class SiteConfigExtension extends DataExtension
         'Copyright'=>'HTMLText',
         'headcode'=>'HTMLText',
         'bodycode'=>'HTMLText',
+        'ThemeVariation' => 'Text',
 
 
     ];
@@ -55,6 +57,9 @@ class SiteConfigExtension extends DataExtension
      $fields->addFieldToTab('Root.Branding', UploadField::create('Logo_Dark','Logo'));
      $fields->addFieldToTab('Root.Branding', UploadField::create('Logo_Light','Logo (Light Version)'));
      $fields->addFieldToTab('Root.Branding', UploadField::create('favicon','Favicon (512px 512px)'));
+     $fields->addFieldToTab('Root.Branding', DropdownField::create('ThemeVariation', 'Navbar', array('light' => 'Light', 'dark' => 'Dark')) ->setValue('light'));
+
+     
 
 
      $fields->addFieldToTab('Root.Contact', new EmailField('Email','Email'));

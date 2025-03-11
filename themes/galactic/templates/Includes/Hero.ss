@@ -1,15 +1,10 @@
 <% if $HeroImage %>
 
 <div style="background-image:url($HeroImage.Link)" class="offset-nav herobanner">
-
-    <Div class="container banneralign">
+    <div class="container banneralign">
 		<div class="row">
 <div class="col-lg-4 col-sm-12">
-
-
-
         <h1 class="text-white pagetitle">
-
             <% if $Alttitle %>
             $Alttitle
             <% else %>
@@ -26,7 +21,7 @@
 <% else %>
 
 <div class="offset-nav">
-    <Div class="container nobanner">
+    <div class="container nobanner">
         <h1>
             <% if $Alttitle %>
             $Alttitle

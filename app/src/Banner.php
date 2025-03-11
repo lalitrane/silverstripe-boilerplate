@@ -24,7 +24,7 @@ class Banner extends DataObject
         'Description' => 'HTMLText',
         'TextVariation' => 'Text',
         // 'HeroBGcolor' => 'Text',
-        'LeftAligned' => 'Boolean',
+        'HideText' => 'Boolean',
         'Sort' => 'Int',
 
     ];
@@ -103,7 +103,7 @@ class Banner extends DataObject
         $fields->removeByName(array(
             'Sort'
         ));
-        $fields->addFieldToTab("Root.Main", new CheckboxField("LeftAligned", "Left Aligned Copy? "),);
+        $fields->addFieldToTab("Root.Main", new CheckboxField("HideText", "Hide Copy? "),);
         $upload->getValidator()->setAllowedExtensions(array(
             'png', 'jpeg', 'jpg', 'gif'
         ));

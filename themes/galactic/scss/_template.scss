@@ -26,7 +26,7 @@ margin-right: 6px;
     .navbar-collapse.bg-light{
        .nav-link {
          @include media-breakpoint-down(lg){
-           color: var(--bs-text-primary) !important ;
+          //  color: var(--bs-text-primary) !important ;
          }
    
         }
@@ -37,7 +37,7 @@ margin-right: 6px;
         .navbar-collapse.bg-dark{
            .nav-link {
              @include media-breakpoint-down(lg){
-                color: rgba(255,255,255,.55)!important;
+                // color: rgba(255,255,255,.55)!important;
              }
        
             }
