@@ -29,6 +29,8 @@ class HomePageController extends PageController
                 'Title' => $banner->Title,
                 'Description' => $banner->Description,
                 'PrimaryPhoto' => $banner->PrimaryPhoto,
+                'MobilePhoto' => $banner->MobilePhoto,
+                'TopLayeredPhoto' => $banner->TopLayeredPhoto,
                 'TextVariation' => $banner->TextVariation,
                 'HideText' => $banner->HideText,
                 'SlideIndex' => $index // Assign index properly
@@ -37,8 +39,8 @@ class HomePageController extends PageController
         }
     
         return $indexedBanners;
+
     }
-    
 
     public function getVendors()
     {

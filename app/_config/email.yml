@@ -1,17 +1,9 @@
-# See https://docs.silverstripe.org/en/4/developer_guides/email/ for additional information about setting up email
+# app/_config/mailer-project.yml
 ---
-Name: project-emailconfig
-After:
-  - '#emailconfig'
+Name: mailer-project
+After: 'mailer'
 ---
 SilverStripe\Core\Injector\Injector:
-  Swift_Transport:
-    class: Swift_SmtpTransport
-    properties:
-      Host: smtp.outgoingserver.com
-      Port: 465
-      Encryption: ssl
-    calls:
-      Username: [ setUsername, ['`APP_SMTP_USERNAME`'] ]
-      Password: [ setPassword, ['`APP_SMTP_PASSWORD`'] ]
-      AuthMode: [ setAuthMode, ['login'] ]
+  Symfony\Component\Mailer\Transport\TransportInterface:
+    constructor:
+      dsn: '<my-dsn>'

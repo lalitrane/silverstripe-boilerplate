@@ -171,21 +171,8 @@ function offCanvas() {
     },
     onStick: function onStick() {
       var navbarClonedClass = this.clonedElem.classList;
-
-      if (navbarClonedClass.contains('navbar-dark')) {
-        // this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
-    this.clonedElem.className = this.clonedElem.className.addClass("navbar-dark");
-
-      }
       // if (navbarClonedClass.contains('transparent') && navbarClonedClass.contains('navbar-dark')) {
       //   this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
-      //   // this.clonedElem.className = this.clonedElem.className.addClass("navbar-dark");
-
-      // }
-      // if (navbarClonedClass.contains('transparent') && navbarClonedClass.contains('navbar-light')) {
-      //   // this.clonedElem.className = this.clonedElem.className.replace("navbar-dark", "navbar-light");
-      //   this.clonedElem.className = this.clonedElem.className.addClass("navbar-light");
-
       // }
     }
   };
@@ -204,6 +191,20 @@ function offCanvas() {
       bsOffCanvas.hide();
     });
   });
+  jQuery(".searchIcon").on('click', function(event){
+    console.log('test');
+    let parentBlock = this.closest(".searchblock");
+    let form = parentBlock ? parentBlock.querySelector(".globalsearchform") : null;
+
+    if (form) {
+        form.classList.toggle("active"); // Toggle class to show/hide form
+        console.log("Toggled class:", form.classList.contains("active") ? "Shown" : "Hidden");
+    } else {
+        console.error("Form not found within:", parentBlock);
+    }
+      //(... rest of your JS code)
+    });
+
 
 }
 

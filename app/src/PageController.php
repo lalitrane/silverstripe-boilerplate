@@ -4,7 +4,12 @@ namespace {
 
     use SilverStripe\Blog\Model\BlogPost;
     use SilverStripe\CMS\Controllers\ContentController;
-
+    use SilverStripe\Forms\Form;
+    use SilverStripe\Forms\TextField;
+    use SilverStripe\Forms\FormAction;
+    use SilverStripe\ORM\PaginatedList;
+    use SilverStripe\View\ArrayData;
+    use SilverStripe\ORM\DataList;
     class PageController extends ContentController
     {
         /**
@@ -22,7 +27,9 @@ namespace {
          *
          * @var array
          */
-        private static $allowed_actions = [];
+
+         private static $allowed_actions = ['SearchForm', 'searchResults',];
+
 
         protected function init()
         {
@@ -67,6 +74,56 @@ namespace {
         //     return $form;
         // }
 
+        public function SearchForm()
+        {
+            $searchField = TextField::create('Search', 'Search')
+                ->setAttribute('placeholder', 'Enter your search query');
+
+            $searchField->setValue($this->getRequest()->getVar('Search'));
+
+            $form = Form::create(
+                $this,
+                'SearchForm',
+                new \SilverStripe\Forms\FieldList($searchField),
+                new \SilverStripe\Forms\FieldList(
+                    FormAction::create('searchResults', 'Search')
+                )
+            );
+            $form->addExtraClass('globalsearchform'); // Add class to form
+
+            // Remove the ID from attributes manually
+            $form->setAttribute('id', null);
+
+            $form->setFormMethod('GET');
+            $form->setFormAction($this->Link('searchResults'));
+
+            return $form;
+        }
+
+
+
+        public function searchResults()
+        {
+            $query = $this->getRequest()->getVar('Search');
+            if (!$query) {
+                return $this->customise(new ArrayData([
+                    'Results' => null,
+                    'Query' => $query,
+                ]))->renderWith(['Layout/Page_searchresults', 'Page']);
+            }
+
+            $results = \SilverStripe\CMS\Model\SiteTree::get()->filterAny([
+                'Title:PartialMatch' => $query,
+                'Content:PartialMatch' => $query,
+            ]);
+
+            return $this->customise(new ArrayData([
+                'Results' => new PaginatedList($results, $this->getRequest()),
+                'Query' => $query,
+            ]))->renderWith(['Page_searchresults', 'Page']);
+
+
+        }
         public function AllBlogPosts()
         {
             // return BlogPost::get();

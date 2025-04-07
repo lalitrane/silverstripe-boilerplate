@@ -33,6 +33,7 @@ class Banner extends DataObject
 
         'PrimaryPhoto' => Image::class,
         'MobilePhoto' => Image::class,
+        'TopLayeredPhoto' => Image::class,
         'HomePage' => HomePage::class, // Add this line
     ];
 
@@ -46,7 +47,8 @@ class Banner extends DataObject
     // This will auto publish the image
     private static $owns = [
         'PrimaryPhoto',
-        'MobilePhoto'
+        'MobilePhoto',
+        'TopLayeredPhoto'
     ];
 
     private static $extensions = [
@@ -55,19 +57,7 @@ class Banner extends DataObject
 
     private static $versioned_gridfield_extensions = true;
 
-    public function onAfterWrite()
-    {
-        parent::onAfterWrite();
-        if ($this->PrimaryPhoto()->exists() && !$this->PrimaryPhoto()->isPublished()) {
 
-            $this->PrimaryPhoto()->doPublish();
-        }
-
-        if ($this->MobilePhoto()->exists() && !$this->MobilePhoto()->isPublished()) {
-
-            $this->MobilePhoto()->doPublish();
-        }
-    }
     protected function onBeforeWrite()
     {
         if (!$this->Sort) {
@@ -88,26 +78,30 @@ class Banner extends DataObject
 
         // $fields->addFieldsToTab('Root.Main', DropdownField::create('HeroBGcolor', 'Banner Background color', array('bluetoskybg' => 'Blue to Skyblue Gradient', 'bluetopinkbg' => 'Blue to Pink gradient','white' => 'White'))->setEmptyString('Select One'),'Content');
 
-        $fields->addFieldToTab('Root.Main',   new HTMLEditorField('Description'));
+        $fields->addFieldToTab('Root.Main', new HTMLEditorField('Description'));
 
 
 
-        $fields->addFieldToTab('Root.Main', $upload = UploadField::create(
-            'PrimaryPhoto',
-            'Picture'
-        ));
-        $fields->addFieldToTab('Root.Main', $upload = UploadField::create(
-            'MobilePhoto',
-            'Mobile Photo'
-        ));
+        $primaryPhotoUpload = UploadField::create('PrimaryPhoto', 'Picture');
+        $mobilePhotoUpload = UploadField::create('MobilePhoto', 'Mobile Photo');
+        $layeredPhotoUpload = UploadField::create('TopLayeredPhoto', 'Top Layered Photo');
+        
+        $primaryPhotoUpload->getValidator()->setAllowedExtensions(['png', 'jpeg', 'jpg', 'gif']);
+        $mobilePhotoUpload->getValidator()->setAllowedExtensions(['png', 'jpeg', 'jpg', 'gif']);
+        $layeredPhotoUpload->getValidator()->setAllowedExtensions(['png', 'jpeg', 'jpg', 'gif']);
+        
+        $primaryPhotoUpload->setFolderName('homepage-photos');
+        $mobilePhotoUpload->setFolderName('homepage-photos');
+        $layeredPhotoUpload->setFolderName('homepage-photos');
+        
+        $fields->addFieldsToTab('Root.Main', [$primaryPhotoUpload, $mobilePhotoUpload, $layeredPhotoUpload]);
+        
+
         $fields->removeByName(array(
             'Sort'
         ));
-        $fields->addFieldToTab("Root.Main", new CheckboxField("HideText", "Hide Copy? "),);
-        $upload->getValidator()->setAllowedExtensions(array(
-            'png', 'jpeg', 'jpg', 'gif'
-        ));
-        $upload->setFolderName('homepage-photos');
+        $fields->addFieldToTab("Root.Main", new CheckboxField("HideText", "Hide Copy? "), );
+   
 
         return $fields;
     }

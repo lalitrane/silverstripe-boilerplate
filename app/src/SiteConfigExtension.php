@@ -30,7 +30,6 @@ class SiteConfigExtension extends DataExtension
         'Twitter' => 'Varchar',
         'Instagram' => 'Varchar',
         'Youtube' => 'Varchar',
-        'Instagram' => 'Varchar',
         'PlaceholderSS1' => 'Varchar',
         'PlaceholderSS2' => 'Varchar',
         'Address'=>'HTMLText',
@@ -38,6 +37,7 @@ class SiteConfigExtension extends DataExtension
         'headcode'=>'HTMLText',
         'bodycode'=>'HTMLText',
         'ThemeVariation' => 'Text',
+        'NavVariation' => 'Text',
 
 
     ];
@@ -57,9 +57,11 @@ class SiteConfigExtension extends DataExtension
      $fields->addFieldToTab('Root.Branding', UploadField::create('Logo_Dark','Logo'));
      $fields->addFieldToTab('Root.Branding', UploadField::create('Logo_Light','Logo (Light Version)'));
      $fields->addFieldToTab('Root.Branding', UploadField::create('favicon','Favicon (512px 512px)'));
-     $fields->addFieldToTab('Root.Branding', DropdownField::create('ThemeVariation', 'Navbar', array('light' => 'Light', 'dark' => 'Dark')) ->setValue('light'));
 
-     
+     $fields->addFieldToTab('Root.Navigation', field: DropdownField::create('ThemeVariation', 'Navbar', array('light' => 'Light', 'dark' => 'Dark')) ->setValue('light'));
+
+     $fields->addFieldToTab('Root.Navigation', field: DropdownField::create('NavVariation', 'Navigation Template', array('one' => 'Single-Row', 'two' => 'Multi-Row')) ->setValue('one'));
+
 
 
      $fields->addFieldToTab('Root.Contact', new EmailField('Email','Email'));

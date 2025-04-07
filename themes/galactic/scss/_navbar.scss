@@ -96,6 +96,12 @@ header {
   }
   .navbar-stick {
     transform: translateY(0%);
+    display: block;
+
+    @include media-breakpoint-down(sm) {
+      display: flex;
+
+    }
     &:not(.navbar-dark) {
     //   box-shadow: $box-shadow-md;
       background: rgba($white, 0.97);

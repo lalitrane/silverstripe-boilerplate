@@ -185,6 +185,20 @@ function offCanvas() {
       bsOffCanvas.hide();
     });
   });
+  jQuery(".searchIcon").on('click', function(event){
+    console.log('test');
+    let parentBlock = this.closest(".searchblock");
+    let form = parentBlock ? parentBlock.querySelector(".globalsearchform") : null;
+
+    if (form) {
+        form.classList.toggle("active"); // Toggle class to show/hide form
+        console.log("Toggled class:", form.classList.contains("active") ? "Shown" : "Hidden");
+    } else {
+        console.error("Form not found within:", parentBlock);
+    }
+      //(... rest of your JS code)
+    });
+
 
 }
 

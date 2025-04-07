@@ -4,8 +4,9 @@
         <div class="container pb-5" data-aos="fade-up">
 
             <div class="row">
-<% if $ElementalArea %>
-    $ElementalArea
+
+<% if $Content %>
+    $Content
 <% end_if %>
                 <%-- <% if $Content %>
                 <div class="col-lg-12">

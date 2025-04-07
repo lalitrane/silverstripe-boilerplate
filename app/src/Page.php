@@ -10,7 +10,7 @@ namespace {
   use SilverStripe\AssetAdmin\Forms\UploadField;
   use SilverStripe\Forms\CheckboxField;
   use SilverStripe\Forms\LabelField;
-  use DNADesign\Elemental\Extensions\ElementalPageExtension;
+  // use DNADesign\Elemental\Extensions\ElementalPageExtension;
 
   class Page extends SiteTree
   {
@@ -24,9 +24,9 @@ namespace {
       "FooterCol2" => "Boolean",
       "FooterCopyrightCTA" => "Boolean",
     ];
-    private static array $extensions = [
-      ElementalPageExtension::class,
-  ];
+  //   private static array $extensions = [
+  //     ElementalPageExtension::class,
+  // ];
     private static $has_one = [
       'HeroImage' => Image::class,
       'MetaImage' => Image::class
@@ -53,22 +53,6 @@ namespace {
     function getSettingsFields()
     {
       $fields = parent::getSettingsFields();
-      // $fields->addFieldToTab("Root.Settings", new LabelField("Visibility"), "Visibility");
-      // $fields->addFieldToTab("Root.Settings", new CheckboxField("FooterCol1", "Show in Footer First column menu? "), "Visibility");
-      // $fields->addFieldToTab("Root.Settings", new CheckboxField("FooterCol2", "Show in Footer Second column menu? "), "Visibility");
-      // $fields->addFieldToTab("Root.Settings", new CheckboxField("ShowInCTAMenu", "Show in CTA menu? "), "Visibility");
-      // $fields->addFieldToTab("Root.Settings", new CheckboxField("FooterCopyrightCTA", "Show in Copyright row? "), "Visibility");
-
-      // $fields->FieldGroup::create(
-      //   new CheckboxField("ShowInCTAMenu", "Show in CTA menu?"),
-      //   new CheckboxField("FooterCopyrightCTA", "Show in Copyright row?")
-      // );
-
-
-      // $visFields = FieldGroup::create(
-      //   new CheckboxField("ShowInCTAMenu", "Show in CTA menu?"),
-      //   new CheckboxField("FooterCopyrightCTA", "Show in Copyright row?")
-      // )->setTitle('Spam Field Mapping');
 
       $fields->addFieldToTab(
         "Root.Settings",
