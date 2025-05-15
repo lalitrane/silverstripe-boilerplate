@@ -56,14 +56,12 @@ cd themes/galactic
 npm install
 # or
 yarn install
-
 ```
 
 Build frontend assets using Gulp.
 
 ```
 gulp
-
 ```
 Set up your Silverstripe environment and configure your database.
 
