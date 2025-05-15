@@ -11,6 +11,11 @@ The following Silverstripe addons are included in this boilerplate:
 - `silverstripe/blog`: Enables blog functionality.
 - `webmen/silverstripe-webp-images`: Adds support for serving images in the WebP format.
 - `silverstripe/userforms`: Allows easy creation of custom forms.
+- `silverstripe/totp-authenticator`: Adds support for Time-based One-Time Password (TOTP) multi-factor authentication.
+- `dnadesign/silverstripe-elemental`: Introduces a flexible content block system for page layouts.
+- `dnadesign/silverstripe-elemental-list`: Adds list-based block types for use with Elemental.
+- `silverstripe/redirectedurls`: Manages redirects from outdated or changed URLs.
+- `wilr/silverstripe-googlesitemaps`: Automatically generates XML sitemaps for search engines.
 
 ## Theme: Galactic
 

@@ -39,6 +39,11 @@ namespace {
     ];
 
 
+    public function getCSSClass()
+    {
+        return $this->ParentID ? 'children' : '';
+    }
+
     // public function onAfterWrite()
     // {
     //   parent::onAfterWrite();

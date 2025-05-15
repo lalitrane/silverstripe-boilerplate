@@ -56,8 +56,18 @@
   //----------------------------------------------------------//
 
   .nav-link {
-    padding: 10px 15px 5px 0;
-    font-size: .9rem;
+    padding: 6px 14px;
+    font-weight: $fw-bold;
+    // font-size: .9rem;
+}
+
+.current{
+  .nav-link{
+    background-color: #ffffff40;
+    
+    @extend .rounded-pill;
+  }
+
 }
 .hamburger{
  display: none !important;
@@ -100,16 +110,27 @@
 }
   .hovertrigger .navbar-nav .dropdown:hover>.dropdown-menu{
     top: 100%;
+    padding: 5px;
+    width: 180px;
+    text-align: center;
     pointer-events: all;
     visibility: visible;
     opacity: 1;
     transition: all .25s ease-in-out;
     display: block;
     position: absolute;
-
+background-color: #fff  ;
     @include media-breakpoint-down(lg){
       position: relative;
     }
+.dropdown{
+  margin-right: 0 !important;
+}
+.nav-link {
+      color: $primary !important;
+      font-size: .9rem;
+  }
+
 
   }
 
@@ -121,11 +142,21 @@
   .searchblockcontainer {
     // display: block;
     display: flex;
-    position: absolute;
+    // position: absolute;
     right: 0;
-    margin-top: 20px;
-    z-index: 9999;
+    margin-left: auto;
+    margin-top: 5px;
+    margin-bottom: 10px;
 
+    z-index: 9999;
+a{
+  color: #fff;
+  background-color: #000;
+  font-weight: $fw-bold ;
+  text-decoration: none;
+  padding: 5px 8px;
+  border-radius: 5px;
+}
     @include media-breakpoint-down(lg) {
         width: 200px;
     }
@@ -133,11 +164,13 @@
     @include media-breakpoint-down(md) {
         width: auto;
         margin-right: 50px;
+        margin-top: 50px;
         z-index: 9 !important;
     }
 
     a {
         margin-right: 10px;
+        
     }
 
     .searchblock {
@@ -148,7 +181,7 @@
             // right: 0;
             // top:10px;
             cursor: pointer;
-
+color: #000;
             @include media-breakpoint-down(lg) {
                 right: 30px;
             }
@@ -289,6 +322,19 @@ input[type="submit"][value="Search"] {
 
 }
 .single-rownav{
+.navbar-other{
+
+
+  .nav-item{
+    a{
+      color: #ffffff;
+      background-color: #000;
+      padding: 5px 8px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+  }
+  }
   .globalsearchform{
     top:54px;
     cursor: pointer;
